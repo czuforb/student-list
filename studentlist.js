@@ -39,37 +39,30 @@ function loadJSON() {
       makeArrays(jsonBloodData);
       // console.log(jsonBloodData)
     });
+
 }
 // CREATE BLOOD CLASS ARRAYS
 function makeArrays(data) {
-  console.log(data.pure.length)
+
   for (let i = 0; i < data.half.length; i++) {
     halfBloods.push(data.half[i]);
   }
   for (let j = 0; j < data.pure.length; j++) {
     pureBloods.push(data.pure[j]);
   }
-  console.log(halfBloods, pureBloods)
+
 }
-
-
-// FIND LASTNAME BLOOD CLASS ARRAYS
-function findOnBloodList(blood, student) {
-  const found = blood.find(function (element) {
-    return element ===  student.lastname;
+// CHECK FOR BLOODTYPE AND ADD KEYVALUE
+function checkTheBlood() {
+  allStudents.forEach(obj => {
+    if (halfBloods.includes(obj.lastname)) {
+      obj.bloodtype = "half";
+    } else if (pureBloods.includes(obj.lastname)) {
+      obj.bloodtype = "pure"
+    } else {
+      obj.bloodtype = "muggle"
+    };
   })
-  return found; 
-}
-
-// CHOOSE BLOOD CLASS
-function whichBloodType(student) {
-  if (student.lastname = findOnBloodList(pureBloods, student)) {
-    return "Pure";
-  } else if (student.lastname = findOnBloodList(halfBloods, student)) {
-    return "Half";
-  } else {
-    return "CIGÁNY";
-  }
 }
 
 
@@ -90,10 +83,11 @@ function prepareObjects(jsonData) {
       ".png";
     student.id = uuidv4();
     student.fullname = student.fullname;
-    student.bloodtype = whichBloodType(student);
     allStudents.push(student);
   });
 }
+
+
 
 /*FILTERING*/
 /*MAKE BUTTONS FILTER*/
