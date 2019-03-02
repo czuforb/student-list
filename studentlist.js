@@ -39,32 +39,7 @@ function loadJSON() {
       makeArrays(jsonBloodData);
       // console.log(jsonBloodData)
     });
-
 }
-// CREATE BLOOD CLASS ARRAYS
-function makeArrays(data) {
-
-  for (let i = 0; i < data.half.length; i++) {
-    halfBloods.push(data.half[i]);
-  }
-  for (let j = 0; j < data.pure.length; j++) {
-    pureBloods.push(data.pure[j]);
-  }
-
-}
-// CHECK FOR BLOODTYPE AND ADD KEYVALUE
-function checkTheBlood() {
-  allStudents.forEach(obj => {
-    if (halfBloods.includes(obj.lastname)) {
-      obj.bloodtype = "half";
-    } else if (pureBloods.includes(obj.lastname)) {
-      obj.bloodtype = "pure"
-    } else {
-      obj.bloodtype = "muggle"
-    };
-  })
-}
-
 
 function prepareObjects(jsonData) {
   jsonData.forEach(jsonObject => {
@@ -88,6 +63,30 @@ function prepareObjects(jsonData) {
 }
 
 
+
+// CREATE BLOOD CLASS ARRAYS
+function makeArrays(data) {
+
+  for (let i = 0; i < data.half.length; i++) {
+    halfBloods.push(data.half[i]);
+  }
+  for (let j = 0; j < data.pure.length; j++) {
+    pureBloods.push(data.pure[j]);
+  }
+
+}
+// CHECK FOR BLOODTYPE AND ADD KEYVALUE
+function checkTheBlood() {
+  allStudents.forEach(obj => {
+    if (halfBloods.includes(obj.lastname)) {
+      obj.bloodtype = "half";
+    } else if (pureBloods.includes(obj.lastname)) {
+      obj.bloodtype = "pure"
+    } else {
+      obj.bloodtype = "muggle"
+    };
+  })
+}
 
 /*FILTERING*/
 /*MAKE BUTTONS FILTER*/
