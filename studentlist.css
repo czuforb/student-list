@@ -1,0 +1,144 @@
+body {
+  background-color: aliceblue;
+}
+
+.hide {
+  display: none !important;
+}
+
+.gryffindor {
+  background-color: #ce3a0a;
+  color: #fdb02e;
+}
+
+.hufflepuff {
+  background-color: #ffc02a;
+  color: #0b0000;
+}
+
+.ravenclaw {
+  background-color: #395f9d;
+  color: #e9ba36;
+}
+
+.sltyherin {
+  background-color: #588c39;
+  color: #c0b1c6;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+#wrapper {
+  /*   background: linear-gradient(174deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);*/
+  background-color: black;
+}
+
+.page-title,
+.removed-title {
+  padding: 2em 0 1em 0;
+  text-align: center;
+  color: white;
+  font-size: 48px;
+}
+
+.student-list,
+.removed-list {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  color: white;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.student {
+  text-align: center;
+  color: white;
+  padding: 0.5em;
+  margin-bottom: 3em;
+  border: 2px solid white;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  list-style-type: none;
+  border-radius: 4px;
+}
+
+.filtering-buttons,
+.sorting-buttons {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filtering-buttons {
+  margin-bottom: 3em;
+}
+
+button {
+  padding: 1em;
+  font-size: 1.5em;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.hufflepuff-button {
+  background-color: #ffc02a;
+  color: #0b0000;
+}
+
+.gryffindor-button {
+  background-color: #ce3a0a;
+  color: #fdb02e;
+}
+
+.ravenclaw-button {
+  background-color: #395f9d;
+  color: #e9ba36;
+}
+
+.slytherin-button {
+  background-color: #588c39;
+  color: #c0b1c6;
+}
+
+button.remove-button,
+button.details-button {
+  display: inherit;
+  width: 100%;
+  margin-top: 0.5em;
+}
+
+.modal {
+  width: 85%;
+  height: 30vh;
+  box-sizing: border-box;
+  position: fixed;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+img.modal-crest {
+  width: 15%;
+}
+
+.close-modal {
+  position: absolute;
+  top: 7%;
+  right: 3%;
+  color: red;
+  cursor: pointer;
+  font-size: 24px;
+}
