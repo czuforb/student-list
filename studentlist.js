@@ -24,6 +24,7 @@ function init() {
   document.querySelector(".student-list").addEventListener("click", clickList);
   document.querySelector(".removed-list").addEventListener("click", clickList);
   loadJSON();
+  console.log("ÉDES FASZOM")
 }
 
 function loadJSON() {
@@ -37,8 +38,9 @@ function loadJSON() {
     .then(res => res.json())
     .then(jsonBloodData => {
       makeArrays(jsonBloodData);
-      // console.log(jsonBloodData)
     });
+
+    console.log("GECIBAZDMEG")
 }
 
 function prepareObjects(jsonData) {
@@ -59,9 +61,13 @@ function prepareObjects(jsonData) {
     student.id = uuidv4();
     student.fullname = student.fullname;
     allStudents.push(student);
+    console.log("KURVAANYÁD")
   });
+  setTimeout(function(){
+     checkTheBlood();
+     console.log("MIT MIKOR");
+     }, 300);
 }
-
 
 
 // CREATE BLOOD CLASS ARRAYS
