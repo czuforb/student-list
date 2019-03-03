@@ -7,8 +7,8 @@ const removedTemplate = document.querySelector("#listtemplate").content;
 let modal = document.querySelector(".modal");
 
 //LINKS
-const link = "http://petlatkea.dk/2019/hogwarts/students.json";
-const bloodLink = "http://petlatkea.dk/2019/hogwarts/families.json";
+const link = "https://petlatkea.dk/2019/hogwarts/students.json";
+const bloodLink = "https://petlatkea.dk/2019/hogwarts/families.json";
 
 //ARRAYS
 let allStudents = new Array();
@@ -292,7 +292,7 @@ function checkTheBlood() {
   })
 }
 
-
+// stackoverflow
 function uuidv4() {
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
     var r = (Math.random() * 16) | 0,
