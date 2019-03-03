@@ -1,87 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student List 2</title>
-    <link rel="stylesheet" href="studentlist.css" type="text/css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student List 2</title>
+  <link rel="stylesheet" href="main.css" type="text/css">
 </head>
+
+
 <body>
-  
-  <div id="wrapper">
+
+  <!-- MODAL -->
 
     <div class='modal hide'>
-      <img class="modal-img" src="images/abbott_h.png" >
-      <img class ="modal-crest" src="images/crests/hufflepuff.png">
-      <h2 class="modal-name">
-        Abott Hannes
-      </h2>
-      <h3 class ="modal-house">Hufflepuff</h3>
-
+      <img class="modal-img" src="images/abbott_h.png">
+      <img class="modal-crest" src="images/crests/hufflepuff.png">
+      <h2 class="modal-name"></h2>
+      <h3 class="modal-house">Hufflepuff</h3>
+      <p class="modal-blood"></p>
       <p class="close-modal">&#10006;</p>
-      
     </div>
-            
-
-    <h1 class="page-title">Student List of 1991</h1>
-
-    <div class="navigation-container">
-      <div class="filtering-buttons">
-          <button class="all-button" onclick='filterAll()'>All</button>
-          <button class="hufflepuff-button" onclick="setCurrentFilter('Hufflepuff')">Hufflepuff</button>
-          <button class="gryffindor-button" onclick="setCurrentFilter('Gryffindor')" >Gryffindor</button>
-          <button class="ravenclaw-button" onclick="setCurrentFilter('Ravenclaw')">Ravenclaw</button>
-          <button class="slytherin-button" onclick="setCurrentFilter('Slytherin')" >Slytherin</button>      
-      </div>
-
-      <div class="sorting-buttons">
-        <button class="firstname-button" onclick="sortByFirstName()">Sort by first name</button>
-        <button class="lastname-button" onclick="sortByLastName()" >Sort by last name</button>
-        <button class="house-button" onclick="sortByHouse()">Sort by house</button>
-
-      </div>
-
   
-  </div>
 
-       
-    <ul class="student-list">
-    </ul>
+<div class="wrapper">
+  <!-- BUTTONS -->
 
-    <h1 class="removed-title">List of expelled students</h1>
-    <ul class="removed-list">
-    </ul>
+  <div class="navigation-container">
+      <div class="filtering-buttons">
+        <button class=" cell all-button" onclick='filterAll()'>All</button>
+        <button class=" cell hufflepuff-button" onclick="setCurrentFilter('Hufflepuff')">Hufflepuff</button>
+        <button class=" cell gryffindor-button" onclick="setCurrentFilter('Gryffindor')">Gryffindor</button>
+        <button class=" cell ravenclaw-button" onclick="setCurrentFilter('Ravenclaw')">Ravenclaw</button>
+        <button class=" cell slytherin-button" onclick="setCurrentFilter('Slytherin')">Slytherin</button>
+      </div>
+      <div class="sorting-buttons">
+        <button class=" cell firstname-button" onclick="sortByFirstName()">Sort by first name</button>
+        <button class=" cell lastname-button" onclick="sortByLastName()">Sort by last name</button>
+        <button class=" cell house-button" onclick="sortByHouse()">Sort by house</button>
+      </div>
+    </div>
+    <h1>Hogwarts Students</h1>
+    <!-- <table class="table">
+        <tr class="row student header">
+            <th class="cell student_name">Name</th>
+            <th class="cell student_house">House</th>
+            <th class="cell blood_type">Blood type</th>
+            <th class="cell details-button-td">Actions</th>
+        </tr>
+      </table> -->
+      <div class="table student-list"></div>
+
+    <h1>Removed Students <span id="counter"></span> </h1>
+
+     <!-- <table class="table">
+        <tr class="row student header">
+            <th class="cell student_name">Name</th>
+            <th class="cell student_house">Age</th>
+            <th class="cell blood_type">Blood type</th>
+            <th class="cell details-button-td">Actions</th>
+        </tr> 
+      </table> -->
+      <div class="table removed-list"></div>
+
+    </div>
+
+    <!-- TEMPLATES -->
+
+    <template id="listtemplate">
+      <tr class="row student">
+        <td class="cell student_name"></td>
+        <td class="cell student_house"></td>
+        <td class="cell blood_type"></td>
+        <td class="cell details-button-td"><button class="cell details-button" data-action="details">Details</button></td>
+        <td class="cell remove-buttond-td"><button class="cell remove-button" data-action="remove">Remove</button></td>
+        </tr>
+      </template>
+      <template id="listtemplate">
+          <tr class="row student">
+            <td class="cell student_name"></td>
+            <td class="cell student_house"></td>
+            <td class="cell blood_type"></td>
+            <td class="cell details-button-td"><button class="cell details-button" data-action="removed-details">Details</button></td>
+            <td class="cell remove-buttond-td"><button class="cell remove-button" data-action="remove">Remove</button></td>
+            </tr>
+          </template>
+      <script src="functions.js"></script>
+    <script src="studentlist.js"></script>
     
 
-    
-
-
-<template id="studentListTemplate">
-    <li class="student">
-            <h1 class="student_name"></h1>
-            <h2 class="student_house"></h2>
-            <button class="details-button" data-action="details">Details</button>
-            <button class="remove-button" data-action="remove">Expel</button>
-    </li>
-
- </template>
-    
-
- <template id="removedListTemplate">
-  <li class="student">
-          <h1 class="student_name"></h1>
-          <h2 class="student_house"></h2>
-          <button class="details-button" data-action="removed-details">Details</button>
-          <button class="remove-button" data-action="remove">Remove</button>
-  </li>
-
-</template>
-
-
-
- <script src="studentlist.js"></script>
-
-
- <!-- <script src="blood.js"></script>-->
+    <!-- <script src="blood.js"></script>-->
 </body>
+
 </html>
+
+

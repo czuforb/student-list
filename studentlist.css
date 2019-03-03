@@ -1,119 +1,75 @@
-body {
-  background-color: aliceblue;
-}
-
 .hide {
   display: none !important;
 }
 
-.gryffindor {
-  background-color: #ce3a0a;
-  color: #fdb02e;
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+
 }
 
-.hufflepuff {
-  background-color: #ffc02a;
-  color: #0b0000;
-}
-
-.ravenclaw {
-  background-color: #395f9d;
-  color: #e9ba36;
-}
-
-.sltyherin {
-  background-color: #588c39;
-  color: #c0b1c6;
-}
-* {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
-#wrapper {
-  /*   background: linear-gradient(174deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);*/
-  background-color: black;
-}
-
-.page-title,
-.removed-title {
-  padding: 2em 0 1em 0;
-  text-align: center;
-  color: white;
-  font-size: 48px;
-}
-
-.student-list,
-.removed-list {
-  padding-top: 3em;
-  padding-bottom: 3em;
-  color: white;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
 
 .student {
-  text-align: center;
-  color: white;
-  padding: 0.5em;
-  margin-bottom: 3em;
-  border: 2px solid white;
-  width: 75%;
-  margin-left: auto;
-  margin-right: auto;
-  list-style-type: none;
-  border-radius: 4px;
+  display: table-row;
+  background: #f6f6f6;
 }
 
-.filtering-buttons,
-.sorting-buttons {
-  width: 75%;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: space-between;
+.student:nth-of-type(odd) {
+  background: #e9e9e9;
 }
 
-.filtering-buttons {
-  margin-bottom: 3em;
+.student.header {
+  font-weight: 900;
+  color: #ffffff;
+  background: #ea6153;
 }
 
-button {
-  padding: 1em;
-  font-size: 1.5em;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.hufflepuff-button {
-  background-color: #ffc02a;
-  color: #0b0000;
-}
-
-.gryffindor-button {
-  background-color: #ce3a0a;
-  color: #fdb02e;
-}
-
-.ravenclaw-button {
-  background-color: #395f9d;
-  color: #e9ba36;
-}
-
-.slytherin-button {
-  background-color: #588c39;
-  color: #c0b1c6;
-}
-
-button.remove-button,
-button.details-button {
-  display: inherit;
+.table {
+  margin: 0 0 40px 0;
   width: 100%;
-  margin-top: 0.5em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  display: table;
 }
+
+.wrapper {
+  margin: 0 auto;
+  padding: 40px;
+  max-width: 800px;
+}
+
+/* .student_name,
+.student_house,
+.blood_type,
+.details-button-td,
+.remove-buttond-td {
+  display: table-cell;
+} */
+
+
+.student .cell {
+  margin-bottom: 10px;
+}
+
+.student .cell:before {
+  margin-bottom: 3px;
+  content: attr(data-title);
+  min-width: 98px;
+  font-size: 10px;
+  line-height: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #969696;
+  display: block;
+}
+}
+
+.cell {
+  padding: 6px 12px;
+  display: table-cell;
+}
+
 
 .modal {
   width: 85%;
@@ -141,4 +97,22 @@ img.modal-crest {
   color: red;
   cursor: pointer;
   font-size: 24px;
-}
+
+  .gryffindor {
+    background-color: #ce3a0a;
+
+  }
+
+  .hufflepuff {
+    background-color: #ffc02a;
+
+  }
+
+  .ravenclaw {
+    background-color: #395f9d;
+
+  }
+
+  .sltyherin {
+    background-color: #588c39;
+  }

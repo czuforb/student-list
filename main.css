@@ -1,0 +1,86 @@
+.hide {
+    display: none !important;
+  }
+
+  h1{
+    color:white;
+  }
+
+  .filtering-buttons{
+   padding-bottom: 10px; 
+  }
+
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    background: #2b2b2b;
+  }
+
+  .wrapper {
+    margin: 0 auto;
+    padding: 40px;
+    max-width: 900px;
+  }
+  
+  .table {
+    margin: 0 0 40px 0;
+    width: 100%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    display: table;
+  }
+
+  .row {
+    display: table-row;
+    background: #f6f6f6;
+  }
+
+  .row.hufflepuff{
+    background-color: #ffc02a;
+  color: #0b0000;  
+  }
+  .row.gryffindor{
+    background-color: #ce3a0a;
+  color: #fdb02e;  
+  }
+  .row.ravenclaw{
+    background-color: #395f9d;
+    color: #e9ba36;  
+  }
+  .row.sltyherin{
+    background-color: #588c39;
+    color: #c0b1c6;  
+  }
+
+  .cell {
+    padding: 6px 12px;
+    display: table-cell;
+  }
+
+  .modal {
+    width: 85%;
+    height: 30vh;
+    box-sizing: border-box;
+    position: fixed;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  img.modal-crest {
+    width: 15%;
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: 7%;
+    right: 3%;
+    color: red;
+    cursor: pointer;
+    font-size: 24px;
